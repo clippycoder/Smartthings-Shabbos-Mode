@@ -48,7 +48,7 @@ zone = 'America/New_York'
 token = ''
 ```
 
-Save the file, and then use `cron()` to schedule it so it runs everyday before sunset. Skip ahead to Finishing up to complete the process.
+Save the file, and then use `cron()` to schedule it so it runs everyday before sunset. Skip ahead to [Finishing up](https://github.com/clippycoder/Smartthings-Shabbos-Mode/blob/main/README.md#finishing-up) to complete the process.
 
 ### Hosting in AWS
 
