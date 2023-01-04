@@ -21,7 +21,7 @@ Go to [https://account.smartthings.com/tokens](https://account.smartthings.com/t
 
 # Hosting:
 
-The next steps depend on wether you've chosen to self-host (recommended), or host on AWS.
+The next steps depend on whether you've chosen to self-host (recommended), or host on AWS. But first, download and unzip the repository.
 
 ### Self-hosting
 
@@ -33,7 +33,7 @@ pip install pysmartthings
 pip install aiohttp
 ```
 
-Then, fill out the folllowing fields in auto-shabbos-mode-self-hosted.py:
+Then, fill out the folllowing fields in Self_Hosting.py: 
 
 ```text
 # Fill these out with your own info:
@@ -47,7 +47,7 @@ zone = 'America/New_York'
 # This is your smartthings token
 token = ''
 ```
-
+Note: You can find your timezone from the list on [wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) under 'TZ database name'.
 Save the file, and then use `cron()` to schedule it so it runs everyday before sunset. Skip ahead to [Finishing up](https://github.com/clippycoder/Smartthings-Shabbos-Mode/blob/main/README.md#finishing-up) to complete the process.
 
 ### Hosting in AWS
@@ -68,4 +68,4 @@ You should now have a virtual switch in smartthings that will turn on at sunset 
 ### Notes:
 - Due to the way it was designed, this system won't function in locales where sunset is after 12:00 AM. That probably won't be a problem for most people, though.
 - The havdallah/tzais time is hardcoded to 72 minutes. If you want to go into the code and change it yourself, go for it.
-- The program cannot currently differentiate between more than one virtual switch. Unfortunately, this means only one virtual switch per account is supported.
+- Beware of typos! A lot of the names here are hardcoded into the program. One misspelling could cause it to fail.
