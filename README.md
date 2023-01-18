@@ -54,10 +54,10 @@ Save the file, and then use `cron()` to schedule it so it runs everyday before s
 
 This is method is a bit more involved. I won't go through it completely, but in short, this is what you must do:
 
-- Create a lambda function in python 3.9 called 'Shabbos_Mode_Activator', and for the code upload 'Shabbos_Mode_Activator.zip'. Fill in the information in the code that's marked for personalization. Then create and add a layer called 'Dependencies' with 'Dependencies.zip'.
+- Create a lambda function in python 3.9 called 'Shabbos_Mode_Activator', and for the code upload 'Shabbos_Mode_Activator.py.zip'. Fill in the information in the code that's marked for personalization. Then create layer called 'Dependencies' with 'Dependencies.zip'. Make sure to set 'Python 3.9' in 'compatible runtimes' option. Then add that layer to your function. 'Make sure to deploy the function!
 - Generate root access and secret access keys for your account. They technically don't have to be root, but I have no idea what permissions they actually need, and this is my first time using lambda and boy is this stuff difficult to navigate.
-- Create another lambda function called 'Get_Sunset_Time' in python 3.9 and upload the code from 'Get_Sunset_Time.zip', and fill in your information + access keys in the code as well. You must also add the 'Dependencies' layer.
-- In Amazon EventBridge, create a trigger called 'Run_Shabbos_Mode' (it must be called exactly that), and schedule it with any valid `cron()` expression. Set it to run the lambda function 'Shabbos_Mode_Activator'.
+- Create another lambda function called 'Get_Sunset_Time' in python 3.9 and upload the code from 'Get_Sunset_Time.py.zip', and fill in your information + access keys in the code as well. You must also add the 'Dependencies' layer. Again, make sure to deploy!
+- In Amazon EventBridge, create a trigger called 'Run_Shabbos_Mode' (it must be called exactly that), and schedule it with any valid `cron()` expression. It doesn't matter which expression it is, because it will be rescheduled by the program. Set it to run the lambda function 'Shabbos_Mode_Activator'.
 - Then create another trigger called 'Get_Sunset_Activator' and schedule it with `cron()` to run the function 'Get_Sunset_Time' before the earliest sunset of the year in your location every day. (Keep in mind that it is not DST aware!)
 
 # Finishing up:
