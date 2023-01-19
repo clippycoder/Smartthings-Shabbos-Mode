@@ -18,12 +18,15 @@ elevation = 33
 place = 'New York, NY'
 # This is your timezone
 zone = 'America/New_York'
+# Set this to True if you're in Israel
+Il = False
 # This is your smartthings token
 token = ''
 
 
 def status(offset):
-    shabbos = JewishCalendar(date.jewish_year, date.jewish_month, date.jewish_day + offset).is_assur_bemelacha()
+    test = date + offset
+    shabbos = JewishCalendar(test.jewish_year, test.jewish_month, test.jewish_day, in_israel=Il).is_assur_bemelacha()
     return shabbos
 
 
