@@ -12,7 +12,7 @@ token = ''
 # Enter your own timezone here:
 os.environ['TZ'] = 'America/New_York'
 # Set to True if you're in Israel
-Il =False
+Il = False
 
 
 def status(offset):
