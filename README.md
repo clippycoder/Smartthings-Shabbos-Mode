@@ -44,6 +44,8 @@ elevation = 33
 place = 'New York, NY'
 # This is your timezone
 zone = 'America/New_York'
+# Set this to True if you're in Israel
+Il = False
 # This is your smartthings token
 token = ''
 ```
