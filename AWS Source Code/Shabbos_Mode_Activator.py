@@ -11,10 +11,13 @@ import os
 token = ''
 # Enter your own timezone here:
 os.environ['TZ'] = 'America/New_York'
+# Set to True if you're in Israel
+Il =False
 
 
 def status(offset):
-    shabbos = JewishCalendar(date.jewish_year, date.jewish_month, date.jewish_day + offset).is_assur_bemelacha()
+    test = date + offset
+    shabbos = JewishCalendar(test.jewish_year, test.jewish_month, test.jewish_day, in_israel=Il).is_assur_bemelacha()
     return shabbos
 
 
