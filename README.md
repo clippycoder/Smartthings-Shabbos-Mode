@@ -14,7 +14,7 @@ This new solution can be a bit complicated. It can either be self-hosted on linu
 
 ### Create a virtual switch
 
-Log into [https://graph.api.smartthings.com/device/list](https://graph.api.smartthings.com/device/list). Create a new device, and name it 'Shabbos Mode Switch'. The network ID can be any random text, and make sure to set the device type to 'Simulated Switch'.
+Log into [https://graph.api.smartthings.com/device/list](https://graph.api.smartthings.com/device/list). Create a new device, and name it `Shabbos Mode Switch`. The network ID can be any random text, and make sure to set the device type to 'Simulated Switch'.
 
 ### Create an access token
 Go to [https://account.smartthings.com/tokens](https://account.smartthings.com/tokens) and generate an access token. Give it any name you want, and select the devices box in 'Authorized Scopes'. Copy the generated token and store it somewhere. You'll need it for later.
@@ -56,11 +56,11 @@ Save the file, and then use `cron()` to schedule it so it runs everyday before s
 
 This is method is a bit more involved. I won't go through it completely, but in short, this is what you must do:
 
-- Create a lambda function in python 3.9 called 'Shabbos_Mode_Activator', and for the code upload 'Shabbos_Mode_Activator.py.zip'. Fill in the information in the code that's marked for personalization. Then create layer called 'Dependencies' with 'Dependencies.zip'. Make sure to set 'Python 3.9' in 'compatible runtimes' option. Then add that layer to your function. 'Make sure to deploy the function!
+- Create a lambda function in python 3.9 called `Shabbos_Mode_Activator`, and for the code upload 'Shabbos_Mode_Activator.py.zip'. Fill in the information in the code that's marked for personalization. Then create layer called `Dependencies` with 'Dependencies.zip'. Make sure to set 'Python 3.9' in 'compatible runtimes' option. Then add that layer to your function. Make sure to deploy the function!
 - Generate root access and secret access keys for your account. They technically don't have to be root, but I have no idea what permissions they actually need, and this is my first time using lambda and boy is this stuff difficult to navigate.
-- Create another lambda function called 'Get_Sunset_Time' in python 3.9 and upload the code from 'Get_Sunset_Time.py.zip', and fill in your information + access keys in the code as well. You must also add the 'Dependencies' layer. Again, make sure to deploy!
-- In Amazon EventBridge, create a trigger called 'Run_Shabbos_Mode' (it must be called exactly that), and schedule it with any valid `cron()` expression. It doesn't matter which expression it is, because it will be rescheduled by the program. Set it to run the lambda function 'Shabbos_Mode_Activator'.
-- Then create another trigger called 'Get_Sunset_Activator' and schedule it with `cron()` to run the function 'Get_Sunset_Time' before the earliest sunset of the year in your location every day. (Keep in mind that it is not DST aware!)
+- Create another lambda function called `Get_Sunset_Time` in python 3.9 and upload the code from 'Get_Sunset_Time.py.zip', and fill in your information + access keys in the code as well. You must also add the `Dependencies` layer. Again, make sure to deploy!
+- In Amazon EventBridge, create a trigger called `Run_Shabbos_Mode` (it must be called exactly that), and schedule it with any valid `cron()` expression. It doesn't matter which expression it is, because it will be rescheduled by the program. Set it to run the lambda function `Shabbos_Mode_Activator`.
+- Then create another trigger called `Get_Sunset_Activator` and schedule it with `cron()` to run the function `Get_Sunset_Time` before the earliest sunset of the year in your location every day. (Keep in mind that it is not DST aware!)
 
 # Finishing up:
 

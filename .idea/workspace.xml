@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="fixed end of month bug, and added Israel support.">
-      <change beforePath="$PROJECT_DIR$/AWS Source Code/Shabbos_Mode_Activator.py" beforeDir="false" afterPath="$PROJECT_DIR$/AWS Source Code/Shabbos_Mode_Activator.py" afterDir="false" />
+    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Self_Hosting.py" beforeDir="false" afterPath="$PROJECT_DIR$/Self_Hosting.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

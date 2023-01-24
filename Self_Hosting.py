@@ -21,7 +21,7 @@ zone = 'America/New_York'
 # Set this to True if you're in Israel
 Il = False
 # This is your smartthings token
-token = ''
+token = '2adfd1a0-bbe4-4048-b86c-4818dfb28674'
 
 
 def status(offset):
