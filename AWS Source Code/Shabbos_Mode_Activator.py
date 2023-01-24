@@ -13,6 +13,8 @@ token = ''
 os.environ['TZ'] = 'America/New_York'
 # Set to True if you're in Israel
 Il = False
+# Set to True to test the function
+TestMode = False
 
 
 def status(offset):
@@ -46,9 +48,9 @@ date = JewishDate()
 
 
 def lambda_handler(event, context):
-    if (not status(0)) & status(1):
+    if (not status(0)) & status(1) and not TestMode:
         main('on')
-    if status(0) & (not status(1)):
+    if status(0) & (not status(1)) or TestMode:
         main('off')
     return {
         'statusCode': 200,
