@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="Added support for TestMode." />
+    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="Added support for TestMode.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.Shabbos Mode Activator">
+  <component name="RunManager" selected="Python.Smaarthings Shabbos Mode Runtime">
     <configuration name="Shabbos Mode Activator" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,8 +69,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Smaarthings Shabbos Mode Runtime" />
       <item itemvalue="Python.Shabbos Mode Activator" />
+      <item itemvalue="Python.Smaarthings Shabbos Mode Runtime" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
