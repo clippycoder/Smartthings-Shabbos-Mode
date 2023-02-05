@@ -50,15 +50,14 @@ Il = False
 token = ''
 ```
 Note: You can find your timezone from the list on [wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) under 'TZ database name'.
-Save the file, and then use `cron()` to schedule it so it runs everyday before sunset. Skip ahead to [Finishing up](https://github.com/clippycoder/Smartthings-Shabbos-Mode/blob/main/README.md#finishing-up) to complete the process.
+Save the file, and then use `cron()` to schedule it so it runs once a day, everyday, a few minutes or so before the earliest sunset in your location. Skip ahead to [Finishing up](https://github.com/clippycoder/Smartthings-Shabbos-Mode/blob/main/README.md#finishing-up) to complete the process.
 
 ### Hosting in AWS
+[Here](https://youtu.be/-UHAucJNpWg) is a video tutorial of the process. This method is a bit more involved. I won't go through it completely here, but I do in the video. In short, this is what you must do:
 
-This is method is a bit more involved. I won't go through it completely, but in short, this is what you must do:
-
-- Create a lambda function in python 3.9 called `Shabbos_Mode_Activator`, and for the code upload 'Shabbos_Mode_Activator.py.zip'. Fill in the information in the code that's marked for personalization. Then create a layer called `Dependencies` with 'Dependencies.zip'. Make sure to set 'Python 3.9' in 'compatible runtimes' option. Then add that layer to your function. Make sure to deploy the function!
+- Create a lambda function in python 3.9 called `Shabbos_Mode_Activator`, and for the code upload 'Shabbos_Mode_Activator.zip'. Fill in the information in the code that's marked for personalization. Then create a layer called `Dependencies` with 'Dependencies.zip'. Make sure to set 'Python 3.9' in 'compatible runtimes' option. Then add that layer to your function. Make sure to deploy the function!
 - Generate root access and secret access keys for your account. They technically don't have to be root, but I have no idea what permissions they actually need, and this is my first time using lambda and boy is this stuff difficult to navigate.
-- Create another lambda function called `Get_Sunset_Time` in python 3.9 and upload the code from 'Get_Sunset_Time.py.zip', and fill in your information + access keys in the code as well. You must also add the `Dependencies` layer. Again, make sure to deploy!
+- Create another lambda function called `Get_Sunset_Time` in python 3.9 and upload the code from 'Get_Sunset_Time.zip', and fill in your information + access keys in the code as well. You must also add the `Dependencies` layer. Again, make sure to deploy!
 - In Amazon EventBridge, create a trigger called `Run_Shabbos_Mode` (it must be called exactly that), and schedule it with any valid `cron()` expression. It doesn't matter which expression it is, because it will be rescheduled by the program. Set it to run the lambda function `Shabbos_Mode_Activator`.
 - Then create another trigger called `Get_Sunset_Activator` and schedule it with `cron()` to run the function `Get_Sunset_Time` before the earliest sunset of the year in your location every day. (Keep in mind that it is not DST aware!)
 - As an optional but recommended step, you should test that both functions work. Run `Get_Sunset_Time` and see if it sets the time to for the `Run_Shabbos_Mode` trigger to around sunset in your local area. To test `Shabbos_Mode_Activator`,  turn on `Shabbos Mode Switch` from the app. Then set the 'TestMode' variable in the code to `True`. If it works, it will turn the switch off. Make sure to reset it to False!
