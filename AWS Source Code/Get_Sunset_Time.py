@@ -4,7 +4,7 @@ from zmanim.hebrew_calendar.jewish_date import JewishDate
 from zmanim.hebrew_calendar.jewish_calendar import JewishCalendar
 from zmanim.zmanim_calendar import ZmanimCalendar
 from zmanim.util.geo_location import GeoLocation
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 # Fill these out with your own info:
@@ -14,6 +14,8 @@ elevation = 23
 zone = 'America/New_York'
 # I don't think this one makes a difference
 place = 'New York, NY'
+# Candlelighting Offset: This is the offset of time from Shkia for the program to run
+candle_lighting = -18
 # Set this to True if you're in Israel
 Il = False
 # Enter your server location and keys here:
@@ -37,12 +39,11 @@ client = boto3.client('events',
 
 date = JewishDate()
 
-
 def lambda_handler(event, context):
     location = GeoLocation(place, lat, long, zone, elevation=elevation)
     zmanim = ZmanimCalendar(geo_location=location, date=datetime.now())
     if not status(0):
-        shkia = zmanim.sunset().astimezone(ZoneInfo('UTC'))
+        shkia = zmanim.sunset().astimezone(ZoneInfo('UTC')) + timedelta(minutes=candle_lighting)
         hours = shkia.strftime('%H')
         minutes = shkia.strftime('%M')
         client.put_rule(Name='Run_Shabbos_Mode', ScheduleExpression='cron(' + minutes + ' ' + hours + ' * * ? *)')

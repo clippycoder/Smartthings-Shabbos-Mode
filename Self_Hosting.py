@@ -3,7 +3,7 @@ from zmanim.hebrew_calendar.jewish_calendar import JewishCalendar
 from zmanim.zmanim_calendar import ZmanimCalendar
 from zmanim.util.geo_location import GeoLocation
 import pytz
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
 import pysmartthings
 import aiohttp
@@ -18,10 +18,12 @@ elevation = 33
 place = 'New York, NY'
 # This is your timezone
 zone = 'America/New_York'
+# Candlelighting Offset: This is the offset of time from Shkia for the program to run
+candle_lighting = -18
 # Set this to True if you're in Israel
 Il = False
 # This is your smartthings token
-token = '2adfd1a0-bbe4-4048-b86c-4818dfb28674'
+token = ''
 
 
 def status(offset):
@@ -56,7 +58,7 @@ os.environ['TZ'] = zone
 if (not status(0)) & status(1):
     location = GeoLocation(place, lat, long, zone, elevation=elevation)
     zmanim = ZmanimCalendar(geo_location=location, date=date.gregorian_date)
-    shkia = zmanim.sunset()
+    shkia = zmanim.sunset() + timedelta(minutes=candle_lighting)
     timezone = pytz.timezone(zone)
     now = datetime.now(timezone)
     time.sleep((shkia - now).total_seconds())
