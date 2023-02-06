@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="Added support for TestMode.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS Source Code/Get_Sunset_Time.py" beforeDir="false" afterPath="$PROJECT_DIR$/AWS Source Code/Get_Sunset_Time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Self_Hosting.py" beforeDir="false" afterPath="$PROJECT_DIR$/Self_Hosting.py" afterDir="false" />
-    </list>
+    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="Updated to work with candlelighting time." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674587813284</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated to work with candlelighting time.">
+      <created>1675658995919</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675658995919</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed end of month bug, and added Israel support." />
     <MESSAGE value="Added support for TestMode." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added support for TestMode." />
+    <MESSAGE value="Updated to work with candlelighting time." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to work with candlelighting time." />
   </component>
 </project>
