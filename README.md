@@ -8,7 +8,7 @@ Due to the unfortunate demise of groovy, the excellent (but sadly groovy based) 
 
 ## Getting Started
 
-This new solution can be a bit complicated. It can either be self-hosted on linux (and probably windows too), or, for those who don't have home servers, hosted in the cloud (AWS). I'd reccomend self-hosting, because the AWS method is much more difficult to set up, and obviously prone to service outages. Personally, I don't have a linux server, so I'm running it in AWS. It should be noted that the AWS method can still be used in free-tier. Regardless of hosting choice, the first few steps are the same.
+This new solution can be a bit complicated. It can either be self-hosted on linux (and probably windows too), or, for those who don't have home servers, hosted in the cloud (AWS). I'd reccomend self-hosting, because the AWS method is much more difficult to set up, and obviously prone to service outages. Personally, I don't have a linux server, so I'm running it in AWS. It should be noted that the AWS method can still be used in free-tier. Regardless of hosting choice, the first few steps are the same. Also, if you encounter any issues, be sure to check out the accompanying [SmartThings forum](https://community.smartthings.com/t/ep-smartapp-replacement-for-shabbat-and-holiday-modes/255274), which has a lot of helpful information and troubleshooting steps.
 
 # Setup:
 
@@ -55,7 +55,9 @@ Note: You can find your timezone from the list on [wikipedia](https://en.wikiped
 Save the file, and then use `cron()` to schedule it so it runs once a day, everyday, a few minutes or so before the earliest candlelighting in your location. Skip ahead to [Finishing up](https://github.com/clippycoder/Smartthings-Shabbos-Mode/blob/main/README.md#finishing-up) to complete the process.
 
 ### Hosting in AWS
-[Here](https://youtu.be/-UHAucJNpWg) is a video tutorial of the process. This method is a bit more involved. I won't go through it completely here, but I do in the video. In short, this is what you must do:
+**Here is a video tutorial of the process:**
+[![IAWS Setup](https://img.youtube.com/vi/-UHAucJNpWg/0.jpg)](https://www.youtube.com/watch?v=-UHAucJNpWg)
+This method is a bit more involved. I won't go through it completely here, but I do in the video. In short, this is what you must do:
 
 - Create a lambda function in python 3.9 called `Shabbos_Mode_Activator`, and for the code upload 'Shabbos_Mode_Activator.zip'. Fill in the information in the code that's marked for personalization. Then create a layer called `Dependencies` with 'Dependencies.zip'. Make sure to set 'Python 3.9' in 'compatible runtimes' option. Then add that layer to your function. Make sure to deploy the function!
 - Generate root access and secret access keys for your account. They technically don't have to be root, but I have no idea what permissions they actually need, and this is my first time using lambda and boy is this stuff difficult to navigate.
