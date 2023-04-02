@@ -59,6 +59,8 @@ Save the file, and then use `cron()` to schedule it so it runs once a day, every
 
 
 [![IAWS Setup](https://img.youtube.com/vi/-UHAucJNpWg/0.jpg)](https://www.youtube.com/watch?v=-UHAucJNpWg)
+
+
 This method is a bit more involved. I won't go through it completely here, but I do in the video. In short, this is what you must do:
 
 - Create a lambda function in python 3.9 called `Shabbos_Mode_Activator`, and for the code upload 'Shabbos_Mode_Activator.zip'. Fill in the information in the code that's marked for personalization. Then create a layer called `Dependencies` with 'Dependencies.zip'. Make sure to set 'Python 3.9' in 'compatible runtimes' option. Then add that layer to your function. Make sure to deploy the function!
