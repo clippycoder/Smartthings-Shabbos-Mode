@@ -56,6 +56,8 @@ Save the file, and then use `cron()` to schedule it so it runs once a day, every
 
 ### Hosting in AWS
 **Here is a video tutorial of the process:**
+
+
 [![IAWS Setup](https://img.youtube.com/vi/-UHAucJNpWg/0.jpg)](https://www.youtube.com/watch?v=-UHAucJNpWg)
 This method is a bit more involved. I won't go through it completely here, but I do in the video. In short, this is what you must do:
 
