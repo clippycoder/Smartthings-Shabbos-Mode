@@ -14,8 +14,10 @@ elevation = 23
 zone = 'America/New_York'
 # I don't think this one makes a difference
 place = 'New York, NY'
-# Candlelighting Offset: This is the offset of time from Shkia for the program to run
+# This is the offset of time from Shkia for the program to run
 candle_lighting = -18
+# This is how long after shkia to wait for havdallah
+havdallah_time = 72
 # Set this to True if you're in Israel
 Il = False
 # Enter your server location and keys here:
@@ -48,7 +50,7 @@ def lambda_handler(event, context):
         minutes = shkia.strftime('%M')
         client.put_rule(Name='Run_Shabbos_Mode', ScheduleExpression='cron(' + minutes + ' ' + hours + ' * * ? *)')
     else:
-        havdallah = zmanim.tzais_72().astimezone(ZoneInfo('UTC'))
+        havdallah = zmanim.tzais_72().astimezone(ZoneInfo('UTC')) + timedelta(minutes=havdallah_time - 72)
         hours = havdallah.strftime('%H')
         minutes = havdallah.strftime('%M')
         client.put_rule(Name='Run_Shabbos_Mode', ScheduleExpression='cron(' + minutes + ' ' + hours + ' * * ? *)')

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="Updated to work with candlelighting time." />
+    <list default="true" id="10387761-757f-4319-a8e6-e14e52e7cf92" name="Changes" comment="Updated to work with candlelighting time.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AWS Source Code/Get_Sunset_Time.py" beforeDir="false" afterPath="$PROJECT_DIR$/AWS Source Code/Get_Sunset_Time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Get_Sunset_Time.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Get_Sunset_Time.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Self_Hosting.py" beforeDir="false" afterPath="$PROJECT_DIR$/Self_Hosting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shabbos_Mode_Activator.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Shabbos_Mode_Activator.zip" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.Self_hosting">
+  <component name="RunManager" selected="Python.Get_Sunset_Time">
     <configuration name="Get_Sunset_Time" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />

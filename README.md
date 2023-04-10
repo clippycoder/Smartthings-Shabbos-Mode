@@ -44,8 +44,10 @@ elevation = 33
 place = 'New York, NY'
 # This is your timezone
 zone = 'America/New_York'
-# Candlelighting Offset: This is the offset of time from Shkia for the program to run
+# This is the offset of time from Shkia for the program to run
 candle_lighting = -18
+# This is how long after shkia to wait for havdallah
+havdallah_time = 72
 # Set this to True if you're in Israel
 Il = False
 # This is your smartthings token
@@ -72,10 +74,9 @@ This method is a bit more involved. I won't go through it completely here, but I
 
 # Finishing up:
 
-You should now have a virtual switch in smartthings that will turn on at sunset before Shabbos and Yom Tov, and off 72 minutes after. To replicate the function of the old [shabbat-and-holiday-modes](https://github.com/SmartThingsCommunity/SmartThingsPublic/blob/master/smartapps/shabbatholidaymode/shabbat-and-holiday-modes.src/shabbat-and-holiday-modes.groovy), create an automation that switches your location mode to 'Shabbos' when the switch is turned on, and to whatever mode you want when the switch is turned off. And that's it! Enjoy!
+You should now have a virtual switch in smartthings that will turn on at sunset before Shabbos and Yom Tov, and off at havdallah. To replicate the function of the old [shabbat-and-holiday-modes](https://github.com/SmartThingsCommunity/SmartThingsPublic/blob/master/smartapps/shabbatholidaymode/shabbat-and-holiday-modes.src/shabbat-and-holiday-modes.groovy), create an automation that switches your location mode to 'Shabbos' when the switch is turned on, and to whatever mode you want when the switch is turned off. And that's it! Enjoy!
 
 ---
 ### Notes:
 - Due to the way it was designed, this system won't function in locales where sunset is after 12:00 AM. That probably won't be a problem for most people, though.
-- The havdallah/tzais time is hardcoded to 72 minutes. If you want to go into the code and change it yourself, go for it.
 - Beware of typos! A lot of the names here are hardcoded into the program. One misspelling could cause it to fail.

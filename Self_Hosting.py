@@ -18,8 +18,10 @@ elevation = 33
 place = 'New York, NY'
 # This is your timezone
 zone = 'America/New_York'
-# Candlelighting Offset: This is the offset of time from Shkia for the program to run
+# This is the offset of time from Shkia for the program to run
 candle_lighting = -18
+# This is how long after shkia to wait for havdallah
+havdallah_time = 72
 # Set this to True if you're in Israel
 Il = False
 # This is your smartthings token
@@ -67,7 +69,7 @@ if (not status(0)) & status(1):
 if status(0) & (not status(1)):
     location = GeoLocation(place, lat, long, zone, elevation=elevation)
     zmanim = ZmanimCalendar(geo_location=location, date=date.gregorian_date)
-    havdallah = zmanim.tzais_72()
+    havdallah = zmanim.tzais_72() + timedelta(minutes=havdallah_time - 72)
     timezone = pytz.timezone(zone)
     now = datetime.now(timezone)
     time.sleep((havdallah - now).total_seconds())
